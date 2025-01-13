@@ -13,7 +13,7 @@ const PORT = 3001;
 // Middleware
 
 const corsOption ={
-    origin:"portfolio.github.io",methods:['POST'], allowedHeaders:['Content-Type','Authorization']
+    origin:"*",methods:['POST'],
 }
 app.use(cors(corsOption));
 app.use(express.json());
@@ -26,7 +26,7 @@ mongoose.connect(process.env.URL)
     .catch((err) => console.log("MongoDB Connection Error::", err));
 
 // Routes
-app.use("/api/contact", contactRoutes); // Ensure this points to the correct routes
+app.use("/api", contactRoutes); // Ensure this points to the correct routes
 
 // Start Server
 app.listen(PORT, () => {
