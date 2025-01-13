@@ -153,7 +153,7 @@ app.use(bodyParser.json());
 // MongoDB Connection
 mongoose.connect(process.env.URL)
     .then(() => console.log("Connected to MongoDB"))
-    .catch((err) => console.log("MongoDB Connection Error:", err));
+    .catch((err) => console.log("MongoDB Connection Error::", err));
 
 // Routes
 app.use("/api/contact", contactRoutes); // Ensure this points to the correct routes
